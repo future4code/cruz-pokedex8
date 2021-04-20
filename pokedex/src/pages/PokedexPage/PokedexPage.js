@@ -14,4 +14,4 @@ const PokedexPage = () => {
             )
 }
 
-export default PokedexPage
+export default PokedexPage;

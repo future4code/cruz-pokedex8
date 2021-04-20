@@ -18,7 +18,7 @@ const Router = () => {
             <DetailsPage />
           </Route>
           <Route>
-             <div>404: Página não encontrada</div>
+             <div>404:Ihhh deu ruim - Página não encontrada</div>
           </Route>
         </Switch>
       </BrowserRouter>
