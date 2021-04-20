@@ -10,6 +10,7 @@ Link do Surge: www.link.com.br
 O que funciona:
 - Item 1
 - Item 2
+- Desafio: Paginação
 
 O que não funciona: 
 - Item 3
