@@ -1,0 +1,16 @@
+.home-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1000px;
+	height: 100%;
+	margin: auto;
+}
+
+.pokemons {
+	margin-top: 50px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
