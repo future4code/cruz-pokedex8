@@ -1,11 +1,13 @@
-//import { useHistory} from 'react-router';
-//import { goToPokedexPage} from '../../routes/coordinator';
+import { useHistory } from "react-router-dom";
+import { goToPokedexPage } from "../../routes/coordinator";
 
 import React, { useState, useContext } from "react";
-import Pagination from "../../components/Pagination";
+
+import Pagination from "../../components/Pagination/Pagination";
 import { PokemonsContext } from "../../context/PokemonsContext";
 import { PokedexContext } from "../../context/PokedexContext";
-import PokemonCard from "../../components/PokemonCard";
+
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import "./home.css";
 
 const HomePage = () => {
@@ -14,12 +16,12 @@ const HomePage = () => {
 
   //For the pagination
   const [pageCurrent, setPageCurrent] = useState(1);
-  const [pokemonsPerPage] = useState(20);
+  const [pokemonsPerPage] = useState(10);
 
   const indexOfLastBook = pageCurrent * pokemonsPerPage;
-  const indexOfFirsBook = indexOfLastBook - pokemonsPerPage;
+  const indexOfFirstBook = indexOfLastBook - pokemonsPerPage;
   const currentPokemons =
-    pokemons && pokemons.slice(indexOfFirsBook, indexOfLastBook);
+    pokemons && pokemons.slice(indexOfFirstBook, indexOfLastBook);
 
   //Change page
   function paginate(pageNumber) {
@@ -38,8 +40,8 @@ const HomePage = () => {
 
   return (
     <>
-      <title>"Lista de Pokemons"</title>
-      <div className="home-container">
+      <div classTitle="Lista de Pokemons" />
+      <div className="home-container animateUp">
         <div className="pokemons">
           {currentPokemons &&
             currentPokemons.map((pokemon) => {
@@ -49,7 +51,8 @@ const HomePage = () => {
                   name={pokemon.name}
                   onClick={() => handleAddPokedex(pokemon.name)}
                   pokemon={pokemon}
-                  btnName="Adicionar" url={pokemon.url}
+                  btnName="Adicionar" 
+                  url={pokemon.url}
                 </PokemonCard>
               );
             })}

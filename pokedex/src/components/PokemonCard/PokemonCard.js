@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "./styles";
-
+import { goToDetailsPage } from "../../routes/coordinator";
+import { Button } from "../styles";
 import "./pokemonCard.css";
-import { usePokemon } from '../hooks/usePokemon';
-import { PokemonDetailContext } from '../context/PokemonDetailContext';
+import { usePokemon } from "../../hooks/usePokemon";
+import { PokemonDetailContext } from "../../context/PokemonDetailContext";
 
 const PokemonCard = (props) => {
   const { setPokemonDetail } = useContext(PokemonDetailContext);
@@ -40,10 +40,6 @@ const PokemonCard = (props) => {
 };
 
 export default PokemonCard;
-
-
-
-
 
 /*
 
