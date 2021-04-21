@@ -1,9 +1,10 @@
-import React, { createContext, useState, useEffect } from "react";
-import api from "../services/api";
+import React, { createContext, useState, useEffect } from 'react';
+import api from '../services/api';
+
 
 export const PokemonsContext = createContext();
 
-export default function PokemonsContextProvider(props) {
+export function PokemonsContextProvider(props) {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
