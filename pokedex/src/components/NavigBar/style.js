@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const Logo = styled.img`
+  width: 150px;
+  height: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const TitlePage = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+`;
+
+export const ButtonNavBar = styled.button`
   min-width: 100px;
   height: 40px;
   background: var(--yellow);
@@ -13,9 +26,8 @@ export const Button = styled.button`
 	font-weight: bold;
   &:hover {
 		cursor: pointer;
-    background: var(--dark #0c4994);
+    background: var(--dark-blue);
 		transition: ease-in-out 0.3s;
 		color: var(--yellow);
   }
 `;
-

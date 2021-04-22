@@ -13,7 +13,7 @@
 
 .pokemonCard-container:hover{
 	transform: scale(1.05, 1.05);
-	box-shadow: 1px 1px 10px rgba(245, 133, 133, 0.8);
+	box-shadow: 1px 1px 10px #ef5350;
 	transition: transform 0.2s;
 }
 
