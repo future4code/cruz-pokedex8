@@ -1,12 +1,9 @@
-import { useHistory } from "react-router-dom";
-import { goToPokedexPage } from "../../routes/coordinator";
-
 import React, { useState, useContext } from "react";
 
 import Pagination from "../../components/Pagination/Pagination";
 import { PokemonsContext } from "../../context/PokemonsContext";
 import { PokedexContext } from "../../context/PokedexContext";
-
+import Navigbar from "../../components/NavigBar/NavigBar";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import "./home.css";
 
@@ -40,7 +37,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div classTitle="Lista de Pokemons" />
+      <Navigbar title="Lista de Pokemons" />
       <div className="home-container animateUp">
         <div className="pokemons">
           {currentPokemons &&
@@ -51,8 +48,7 @@ const HomePage = () => {
                   name={pokemon.name}
                   onClick={() => handleAddPokedex(pokemon.name)}
                   pokemon={pokemon}
-                  btnName="Adicionar" 
-                  url={pokemon.url}
+                  btnName="Adicionar" url={pokemon.url}
                 </PokemonCard>
               );
             })}

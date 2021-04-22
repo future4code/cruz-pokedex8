@@ -9,3 +9,7 @@ export const goToDetailsPage = (history) => {
 export const goToPokedexPage = (history) => {
     history.push('/pokedex')
 }
+
+export const goToBack = (history) => {
+    history.goToBack()
+  }
