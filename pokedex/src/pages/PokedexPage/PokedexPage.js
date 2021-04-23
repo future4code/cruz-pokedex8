@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import { PokedexContext } from '../../context/PokedexContext';
 import { PokemonsContext } from '../../context/PokemonsContext';
-import { usePokemonId } from '../../hooks/usePokemonId';
 import { goToHomePage } from '../../routes/coordinator';
 
 const PokedexPage = () => {
@@ -22,8 +21,6 @@ const PokedexPage = () => {
 
       const pokemon = pokedex.filter((pokemon) => pokemon.name === name);
       setRemovePokemon(pokemon[0])
-      
-      // const id = usePokemonId('', pokemon[0].url)
       
       axios
         .get(pokemon[0].url)
