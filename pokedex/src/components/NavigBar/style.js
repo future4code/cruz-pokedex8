@@ -9,7 +9,7 @@ export const Logo = styled.img`
 `;
 
 export const TitlePage = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2/*2.5*/rem;
   font-weight: bold;
 `;
 

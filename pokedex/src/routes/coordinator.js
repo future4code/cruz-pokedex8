@@ -11,5 +11,5 @@ export const goToPokedexPage = (history) => {
 }
 
 export const goToBack = (history) => {
-    history.goToBack()
+    history.goBack()
   }
