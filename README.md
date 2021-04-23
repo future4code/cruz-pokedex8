@@ -5,10 +5,16 @@
 - Dayane Lang
 - Rafael Orlando
 
-# 🔗 :linked_paperclips: Link do Surge: www.link.com.br
+# 🔗  Link do Surge: www.link.com.br
+
+#🎨 :artist: Layout:
+- Styled-componentes
+- Material-UI
 
 # :sunglasses::star2: O que Funciona:
-- Renderização das Páginas
+- Renderização das Páginas### 🎨 Layout:
+- Styled-componentes
+- Material-UI
 - Projeto a princípio ok
 - Desafio: Paginação
 
