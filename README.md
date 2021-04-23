@@ -5,9 +5,9 @@
 - Dayane Lang
 - Rafael Orlando
 
-# 🔗 Link do Surge: www.link.com.br
+# 🔗 :linked_paperclips: Link do Surge: www.link.com.br
 
-# ✨ :ahhhhhhhhhhh: O que Funciona:
+# :sunglasses::star2: O que Funciona:
 - Renderização das Páginas
 - Projeto a princípio ok
 - Desafio: Paginação
