@@ -1,77 +1,71 @@
-
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import PokemonCard from '../../components/PokemonCard/PokemonCard';
-import { PokedexContext } from '../../context/PokedexContext';
-import { PokemonsContext } from '../../context/PokemonsContext';
-import { goToHomePage } from '../../routes/coordinator';
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { PokedexContext } from "../../context/PokedexContext";
+import { PokemonsContext } from "../../context/PokemonsContext";
+import PokedexNavBar from "./PokedexNavBar";
 
 const PokedexPage = () => {
-    const history = useHistory();
-    const { pokedex, setPokedex } = useContext(PokedexContext);
-    const { pokemons, setPokemons } = useContext(PokemonsContext);
-    const [ id, setId ]  = useState('')
-    const [ removePokemon, setRemovePokemon ]  = useState({})
+  const { pokedex, setPokedex } = useContext(PokedexContext);
+  const { pokemons, setPokemons } = useContext(PokemonsContext);
+  const [id, setId] = useState("");
+  const [removePokemon, setRemovePokemon] = useState({});
 
-    const handleRemove = (name) => {
-      
-      const newPokedex = pokedex.filter((pokemon) => pokemon.name !== name);
-      setPokedex(newPokedex);
+  const handleRemove = (name) => {
+    const newPokedex = pokedex.filter((pokemon) => pokemon.name !== name);
+    setPokedex(newPokedex);
 
-      const pokemon = pokedex.filter((pokemon) => pokemon.name === name);
-      setRemovePokemon(pokemon[0])
-      
-      axios
-        .get(pokemon[0].url)
-        .then((res) => {
-          setId(res.data.id)
-           })
-        .catch((err)=> {
-          console.log(err)})     
+    const pokemon = pokedex.filter((pokemon) => pokemon.name === name);
+    setRemovePokemon(pokemon[0]);
+
+    axios
+      .get(pokemon[0].url)
+      .then((res) => {
+        setId(res.data.id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    if (removePokemon.name) {
+      const number = id - 1;
+      const newPokemons = [...pokemons];
+      newPokemons.splice(number, 0, removePokemon);
+      setPokemons(newPokemons);
     }
-        
-        useEffect(() => {
-          if (removePokemon.name) {
-            const number = id - 1
-            const newPokemons = [...pokemons]
-            newPokemons.splice(number, 0, removePokemon)
-            setPokemons(newPokemons)
-          }
-        },[id])
-     
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
-    
+  return (
+    <div>
+      <PokedexNavBar title="Minha PokeDex" />
 
-    return (<div>
-                <h1>PokeDéx</h1>
-                <button onClick={()=> goToHomePage(history)}>Voltar para lista de pokemons</button>
-                <div className="pokedex-container animateUp">
-                <title>'Pokedex'</title>
-                <div className="pokemons">
-                      {pokedex &&
-                      pokedex.map((pokemon) => (
-                      <PokemonCard
-                        key={Math.floor(Math.random() * 1000)}
-                        name={pokemon.name}
-                        onClick={() => handleRemove(pokemon.name)}
-                        pokemon={pokemon}
-                        btnName="Remove"
-                        bgColor="#ffffffe0"
-                        color="red"
-                        color2="#1D2C5E"
-                        url={pokemon.url}
-                      />
-                    ))}
-                </div>
-                </div>
-            </div>
-
-            )
-}
+      <div className="pokedex-container animateUp">
+        <title>'Pokedex'</title>
+        <div className="pokemons">
+          {pokedex &&
+            pokedex.map((pokemon) => (
+              <PokemonCard
+                key={Math.floor(Math.random() * 1000)}
+                name={pokemon.name}
+                onClick={() => handleRemove(pokemon.name)}
+                pokemon={pokemon}
+                btnName="Soltar"
+                bgColor="#ffffffe0"
+                color="red"
+                color2="#1D2C5E"
+                url={pokemon.url}
+              />
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default PokedexPage;
-
 
 /*
 import React, { useContext } from "react";
