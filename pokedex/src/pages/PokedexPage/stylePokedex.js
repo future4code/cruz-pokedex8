@@ -8,14 +8,6 @@ export const Logo = styled.img`
   }
 `;
 
-export const Pokebola = styled.img`
-  width: 130px;
-  height: 50px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 export const TitlePage = styled.h1`
   font-size: 2/*2.5*/rem;
   font-weight: bold;
