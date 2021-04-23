@@ -1,15 +1,73 @@
 
-import React from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import PokemonCard from '../../components/PokemonCard/PokemonCard';
+import { PokedexContext } from '../../context/PokedexContext';
+import { PokemonsContext } from '../../context/PokemonsContext';
+import { usePokemonId } from '../../hooks/usePokemonId';
 import { goToHomePage } from '../../routes/coordinator';
 
 const PokedexPage = () => {
     const history = useHistory();
-    console.log(history)
+    const { pokedex, setPokedex } = useContext(PokedexContext);
+    const { pokemons, setPokemons } = useContext(PokemonsContext);
+    const [ id, setId ]  = useState('')
+
+    const handleRemove = (name) => {
+      
+      const newPokedex = pokedex.filter((pokemon) => pokemon.name !== name);
+      setPokedex(newPokedex);
+
+      const pokemon = pokedex.filter((pokemon) => pokemon.name === name);
+      console.log(pokemon[0].url)
+      
+      // const id = usePokemonId('', pokemon[0].url)
+      
+      axios
+        .get(pokemon[0].url)
+        .then((res) => {
+          setId(res.data.id) })
+        .catch((err)=> {
+          console.log(err)})
+
+      const number = id - 1
+      console.log(number)
+      const newPokemons = [...pokemons]
+      newPokemons.splice(number, 0, pokemon[0])
+      console.log(newPokemons)
+      setPokemons(newPokemons)
+   
+      console.log(id)
+
+    }
+
+    
+
+    
+
     return (<div>
                 <h1>PokeDéx</h1>
                 <button onClick={()=> goToHomePage(history)}>Voltar para lista de pokemons</button>
-
+                <div className="pokedex-container animateUp">
+                <title>'Pokedex'</title>
+                <div className="pokemons">
+                      {pokedex &&
+                      pokedex.map((pokemon) => (
+                      <PokemonCard
+                        key={Math.floor(Math.random() * 1000)}
+                        name={pokemon.name}
+                        onClick={() => handleRemove(pokemon.name)}
+                        pokemon={pokemon}
+                        btnName="Remove"
+                        bgColor="#ffffffe0"
+                        color="red"
+                        color2="#1D2C5E"
+                        url={pokemon.url}
+                      />
+                    ))}
+                </div>
+                </div>
             </div>
 
             )

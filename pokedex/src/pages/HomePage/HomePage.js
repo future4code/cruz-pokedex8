@@ -43,13 +43,13 @@ const HomePage = () => {
           {currentPokemons &&
             currentPokemons.map((pokemon) => {
               return (
-                <PokemonCard>
+                <PokemonCard 
                   key={pokemon.name}
                   name={pokemon.name}
                   onClick={() => handleAddPokedex(pokemon.name)}
                   pokemon={pokemon}
                   btnName="Adicionar" url={pokemon.url}
-                </PokemonCard>
+                />               
               );
             })}
         </div>
