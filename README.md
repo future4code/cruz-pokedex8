@@ -8,10 +8,10 @@ Nome dos integrantes:
 Link do Surge: www.link.com.br
 
 O que funciona:
-- Item 1
-- Item 2
+- Renderização das Páginas
+- Projeto a princípio ok
 - Desafio: Paginação
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Falta Estilização e limpeza do code.
+- Item 2
