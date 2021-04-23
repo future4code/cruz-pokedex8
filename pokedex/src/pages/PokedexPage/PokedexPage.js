@@ -13,6 +13,7 @@ const PokedexPage = () => {
     const { pokedex, setPokedex } = useContext(PokedexContext);
     const { pokemons, setPokemons } = useContext(PokemonsContext);
     const [ id, setId ]  = useState('')
+    const [ removePokemon, setRemovePokemon ]  = useState({})
 
     const handleRemove = (name) => {
       
@@ -20,29 +21,28 @@ const PokedexPage = () => {
       setPokedex(newPokedex);
 
       const pokemon = pokedex.filter((pokemon) => pokemon.name === name);
-      console.log(pokemon[0].url)
+      setRemovePokemon(pokemon[0])
       
       // const id = usePokemonId('', pokemon[0].url)
       
       axios
         .get(pokemon[0].url)
         .then((res) => {
-          setId(res.data.id) })
+          setId(res.data.id)
+           })
         .catch((err)=> {
-          console.log(err)})
-
-      const number = id - 1
-      console.log(number)
-      const newPokemons = [...pokemons]
-      newPokemons.splice(number, 0, pokemon[0])
-      console.log(newPokemons)
-      setPokemons(newPokemons)
-   
-      console.log(id)
-
+          console.log(err)})     
     }
-
-    
+        
+        useEffect(() => {
+          if (removePokemon.name) {
+            const number = id - 1
+            const newPokemons = [...pokemons]
+            newPokemons.splice(number, 0, removePokemon)
+            setPokemons(newPokemons)
+          }
+        },[id])
+     
 
     
 
