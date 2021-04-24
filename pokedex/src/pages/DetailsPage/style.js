@@ -1,5 +1,4 @@
-
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PokeDetailContainer = styled.div`
   display: flex;
@@ -30,11 +29,13 @@ export const Image = styled.img`
 `;
 
 export const Div = styled.div`
-  height: 400px/*660px*/;
+  height: 400px /*660px*/;
   width: 260px;
   min-width: 200px;
   padding: 20px 20px;
   font-size: 1rem;
+  color: black;
+  bgcolor: yellow;
   background: var(--dark-blue);
   color: var(--yellow);
   border-radius: 10px;
@@ -44,6 +45,6 @@ export const Div = styled.div`
 `;
 
 export const TitlePok = styled.h2`
-  font-size: 1.2/*1.8*/rem;
+  font-size: 1.2 /*1.8*/ rem;
   font-weight: bold;
 `;
