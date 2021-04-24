@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 // import { Button } from "../styles";
-import { Button, styled, ThemeProvider } from '@material-ui/core';
+import { Button,  ThemeProvider } from '@material-ui/core';
 import logo from "../../assets/Images/pokemon-logo.png";
 import pokebola from "../../assets/Images/pokebola.gif";
 import {theme} from './theme'

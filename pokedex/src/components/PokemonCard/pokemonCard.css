@@ -8,12 +8,12 @@
 	height: 300px;
 	padding-bottom: 10px;
 	margin: 10px;
-	background-color: var(--yellow);
+	background-color: rgb(238, 238, 127);
 }
 
 .pokemonCard-container:hover{
 	transform: scale(1.05, 1.05);
-	box-shadow: 1px 1px 10px #ef5350;
+	box-shadow: 3px 3px 10px #ef5350;
 	transition: transform 0.2s;
 }
 

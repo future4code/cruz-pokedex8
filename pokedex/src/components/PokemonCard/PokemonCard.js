@@ -13,7 +13,8 @@ const PokemonCard = (props) => {
 
   const history = useHistory();
   const img = usePokemon([], props.url);
-
+ 
+  
   function handleDetails(pokemon) {
     setPokemonDetail(pokemon);
     history.push("/details");
@@ -22,7 +23,7 @@ const PokemonCard = (props) => {
   return (
     <div className="pokemonCard-container">
       <TitlePage>{props.name}</TitlePage>
-      <img src={img} alt="Pokemon" />
+      <img src={img} alt="Pokemon"/>
       <div className="pokemonCard-btns">
         <Button
           style={{ background: props.bgColor, color: props.color }}

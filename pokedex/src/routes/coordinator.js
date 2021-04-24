@@ -1,15 +1,15 @@
 export const goToHomePage = (history) => {
-    history.push('/')
-}
+  history.push("/");
+};
 
-export const goToDetailsPage = (history) => {
-    history.push('/details')
-}
+export const goToDetailsPage = (history, id) => {
+  history.push("/details");
+};
 
 export const goToPokedexPage = (history) => {
-    history.push('/pokedex')
-}
+  history.push("/pokedex");
+};
 
 export const goToBack = (history) => {
-    history.goBack()
-  }
+  history.goBack();
+};
