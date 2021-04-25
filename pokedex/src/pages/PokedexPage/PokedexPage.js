@@ -50,12 +50,12 @@ const PokedexPage = () => {
               <PokemonCard
                 key={Math.floor(Math.random() * 1000)}
                 name={pokemon.name}
+                img src= {`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`} alt="" title=""
                 onClick={() => handleRemove(pokemon.name)}
                 pokemon={pokemon}
                 btnName="Soltar"
-                bgColor="#ffffffe0"
-                color="red"
-                color2="#1D2C5E"
+                color="yellow"
+                color2="white"
                 url={pokemon.url}
               />
             ))}

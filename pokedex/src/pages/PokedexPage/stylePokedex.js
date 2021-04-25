@@ -16,7 +16,7 @@ export const TitlePage = styled.h1`
 export const ButtonNavBar = styled.button`
   min-width: 100px;
   height: 40px;
-  background: var(--yellow);
+  background: red;
   border: none;
   outline: none;
 	border-radius: 10px;
@@ -26,8 +26,8 @@ export const ButtonNavBar = styled.button`
 	font-weight: bold;
   &:hover {
 		cursor: pointer;
-    background: var(--dark-blue);
+    background: blue;
 		transition: ease-in-out 0.3s;
-		color: var(--yellow);
+		color: yellow;
   }
 `;

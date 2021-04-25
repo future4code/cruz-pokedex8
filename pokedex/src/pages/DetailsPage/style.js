@@ -1,15 +1,26 @@
 import styled from "styled-components";
+//import Bg1 from '../../assets/Images/fundopage.jpeg';
 
 export const PokeDetailContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   max-width: 1000px;
   margin: 5px auto;
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
 `;
+
+/*export const PageBg1 = styled.div`
+display: flex;
+height: 100vh;
+background-image: url(${ Bg1 });
+background-repeat: no-repeat;
+background-size: cover;
+`;
+*/
 
 export const PokeImages = styled.div`
   height: 500px;
