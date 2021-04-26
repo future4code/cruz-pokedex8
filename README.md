@@ -10,7 +10,7 @@ Integrantes:
 •	Rafael orlando
 
 
-🔗 Link do Surge: cruz-pokdex8.surge.sh
+🔗 Link do Surge: http://cruz-pokedex8.surge.sh/
 
 
 #🎨 🧑‍🎨 Layout:
