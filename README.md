@@ -9,7 +9,7 @@
 •	Rafael orlando
 
 
-🔗 Link do Surge: www.link.com.br
+🔗 Link do Surge: cruz-pokdex8.surge.sh
 
 
 #🎨 🧑‍🎨 Layout:
@@ -28,7 +28,6 @@
 
 ❎O que não funciona:
 
-•	Falta Estilização e limpeza do código.
-
-•	Item 2
+•	Revisar código da Batalha.	
+•	Link do surge 
 
