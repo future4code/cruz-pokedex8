@@ -23,12 +23,12 @@ Integrantes:
 
 •	Renderização das Páginas
 
-•	Projeto a princípio ok
+•	Páginas Responsivas
 
-•	Desafio: Paginação
+•	Desafios: Paginação, Batalha
 
 ❎O que não funciona:
 
-•	Revisar código da Batalha.	
-•	Link do surge 
+•	Botão Batalha, porém há código para tanto.	
+
 
