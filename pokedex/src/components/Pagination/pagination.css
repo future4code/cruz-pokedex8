@@ -16,7 +16,7 @@
 	align-items: center;
 	justify-content: center;
 	background:  rgb(163, 13, 13);
-	color: var(--yellow);
+	color: white;
 }
 
 .pagination .pagination-number:hover {

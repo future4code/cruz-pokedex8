@@ -1,20 +1,22 @@
 import React, { useContext } from "react";
 import Navigbar from "../../components/NavigBar/NavigBar";
-
 import { TitlePok, Image, Div, PokeDetailContainer, PokeImages } from "./style";
-
 import { PokemonDetailContext } from "../../context/PokemonDetailContext";
 import { usePokemonDetails } from "../../hooks/usePokemonDetails";
+//import { goToDetailsPage } from "../../routes/coordinator";
+
 
 const PokeDetail = () => {
-  const { pokemonDetail } = useContext(PokemonDetailContext);
 
+  const { pokemonDetail } = useContext(PokemonDetailContext);
   const data = usePokemonDetails("", pokemonDetail.name);
   console.log("data", data);
-
+  
+  
   return (
     <>
       <Navigbar title="Pokemon" />
+     
       <PokeDetailContainer className="animateUp">
         <PokeImages>
           <Image
@@ -51,8 +53,10 @@ const PokeDetail = () => {
             })}
         </Div>
       </PokeDetailContainer>
+     
     </>
   );
 };
 
 export default PokeDetail;
+

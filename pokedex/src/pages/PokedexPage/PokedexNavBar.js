@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Button, ThemeProvider } from "@material-ui/core";
-import { goToBack, goToHomePage } from "../../routes/coordinator";
+import { goToBack, goToHomePage, goToBattle } from "../../routes/coordinator";
 import { TitlePage, Logo } from "./stylePokedex";
 import { theme } from "../../components/NavigBar/theme";
 import "./pokedexNavBar.css";
@@ -16,14 +16,9 @@ const PokedexNavBar = (props) => {
         <Logo src={logo} alt="Logo" onClick={() => goToHomePage(history)} />
         <TitlePage>{props.title}</TitlePage>
         <div className="navigbar-btns">
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => goToBack(history)}
-          >
-            Back
-          </Button>
-          &nbsp;&nbsp;
+        <Button variant="contained" color="primary" onClick={() => goToBack(history)}>Back</Button>
+            &nbsp;&nbsp;
+            <Button variant="contained" color="primary" onClick={() => goToBattle(history)}>Battle</Button>
         </div>
       </div>
     </ThemeProvider>
