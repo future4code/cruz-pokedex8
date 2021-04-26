@@ -1,22 +1,27 @@
+import React, { useContext } from "react";
+import Navigbar from "../../components/NavigBar/NavigBar";
+import { TitlePok, Image, Div, PokeDetailContainer, PokeImages } from "./style";
+import { PokemonDetailContext } from "../../context/PokemonDetailContext";
+import { usePokemonDetails } from "../../hooks/usePokemonDetails";
+//import { goToDetailsPage } from "../../routes/coordinator";
 
-import React, { useContext } from 'react';
-import Navigbar from '../../components/NavigBar/NavigBar';
-import { TitlePok, Image, Div, PokeDetailContainer, PokeImages } from './style';
-import { PokemonDetailContext } from '../../context/PokemonDetailContext';
-import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 
 const PokeDetail = () => {
-  const { pokemonDetail } = useContext(PokemonDetailContext);
 
+  const { pokemonDetail } = useContext(PokemonDetailContext);
   const data = usePokemonDetails("", pokemonDetail.name);
   console.log("data", data);
-
+  
+  
   return (
     <>
       <Navigbar title="Pokemon" />
+     
       <PokeDetailContainer className="animateUp">
         <PokeImages>
-          <Image src={data && data.sprites.front_default} />
+          <Image
+            src={data && data.sprites.other["official-artwork"].front_default}
+          />
           <Image src={data && data.sprites.back_default} />
         </PokeImages>
         <Div>
@@ -48,46 +53,10 @@ const PokeDetail = () => {
             })}
         </Div>
       </PokeDetailContainer>
+     
     </>
   );
 };
 
 export default PokeDetail;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React from 'react';
-import { useHistory } from 'react-router';
-import { goToHomePage, goToPokedexPage } from '../../routes/coordinator';
-
-const DetailsPage = () => {
-    const history = useHistory()
-    return (
-            <div>
-                <h1>Detalhes</h1>
-                <button onClick={() => goToPokedexPage(history)}>Pokedéx</button>
-                <button onClick={() => goToHomePage(history)}>Pokemons</button>
-            </div>
-            )
-}
-
-export default DetailsPage
-*/
-
-
 

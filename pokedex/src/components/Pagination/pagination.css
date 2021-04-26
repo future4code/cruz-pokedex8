@@ -15,20 +15,20 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: var(--dark-blue);
-	color: var(--yellow);
+	background:  rgb(163, 13, 13);
+	color: white;
 }
 
 .pagination .pagination-number:hover {
 	cursor: pointer;
 	transform: scale(0.98, 0.98);
 	transition: ease-in-out 0.2s;
-	background: var(--yellow);
-	color: var(--dark-blue);
+	background: yellow;
+	color: rgb(163, 13, 13);
 }
 
 .pagination .pagination-number p {
-	font-size: 16px;
-	font-weight: bold;
+	font-size: 18px whitesmoke;
+	font-weight: lighter;
 	margin: 0;
 }
