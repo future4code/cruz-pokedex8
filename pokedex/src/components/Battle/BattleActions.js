@@ -166,7 +166,7 @@ export const BattleActions = (props) => {
             <strong>hp:</strong> {hpOpponent}
           </p>
           <p>{yourTextAttack}</p>
-          <p> Isso causou {powerDefense} de dano</p>
+          <p> Deu ruim, causou {powerDefense} de dano</p>
         </div>
       ) : (
         <p>Carregando ....</p>
