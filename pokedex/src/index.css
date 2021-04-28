@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: PokemonHollow;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: redscale;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PokemonHollow;
+  src: url(./assets/Font/PokemonHollow.ttf);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
